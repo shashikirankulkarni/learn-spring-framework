@@ -4,8 +4,9 @@ import java.util.List;
 
 public class GameRunner {
 
-	MarioGame game;
-	public GameRunner(MarioGame game) {
+	//MarioGame game;
+	private SuperContra game;
+	public GameRunner(SuperContra game) {
 		// TODO Auto-generated constructor stub
 		this.game = game;
 	}
