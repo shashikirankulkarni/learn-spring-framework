@@ -16,8 +16,15 @@ public class App02HelloWorldSpring {
 		 System.out.println(context.getBean("name"));
 		 System.out.println(context.getBean("age"));
 		 System.out.println(context.getBean("person"));
-		 System.out.println(context.getBean("address"));
+		 System.out.println(context.getBean("postalAddress"));
 		 System.out.println(context.getBean("education"));
+		 System.out.println(context.getBean(Address.class));
+		 System.out.println(context.getBean(Education.class));
+		 System.out.println(context.getBean("person2MethodCall"));
+		 System.out.println(context.getBean("person3Parameters"));
+		 
+		 
+		 
 		
 		
 		
