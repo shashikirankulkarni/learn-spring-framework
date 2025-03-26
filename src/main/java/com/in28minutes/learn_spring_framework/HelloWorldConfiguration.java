@@ -1,7 +1,9 @@
 package com.in28minutes.learn_spring_framework;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 //Eliminate the verbocity in creating Java Beans
 //Public accessor Methods, Constructor
@@ -29,6 +31,7 @@ public class HelloWorldConfiguration {
 	}
 	
 	@Bean
+	@Primary
 	public Person person() {
 		
 		var person = new Person("Sandeep",30,this.address());
@@ -49,9 +52,24 @@ public class HelloWorldConfiguration {
 		return new Person(name, age, postalAddress); //name, age, postalAddress
 	}
 	
+	
+	@Bean
+	public Person person4Qualifier(String name, int age, @Qualifier("addressQualifier") Address finalAddress){
+		return new Person(name, age, finalAddress); //name, age, postalAddress
+	}
+	
+	
+	
 	@Bean(name = "postalAddress")
+	@Primary
 	public Address address() {
 		return new Address("1st Cross Siddarameshwar","Jamkhandi");
+	}
+	
+	@Bean(name = "finalAddress")
+	@Qualifier("addressQualifier")
+	public Address address2() {
+		return new Address("Electronic city","Bangalore");
 	}
 	
 	@Bean
