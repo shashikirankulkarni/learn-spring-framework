@@ -1,9 +1,11 @@
-package com.in28minutes.learn_spring_framework;
+package com.in28minutes.learn_spring_framework.helloworld;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+
+import com.in28minutes.learn_spring_framework.Education;
 
 //Eliminate the verbocity in creating Java Beans
 //Public accessor Methods, Constructor
